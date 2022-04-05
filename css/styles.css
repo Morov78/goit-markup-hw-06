@@ -1,6 +1,6 @@
 :root {
   /* час трансформації */
-  --trans-duration: 250ms;
+  --trans-duration: 2500ms;
   /* функція розподілу часу */
   --trans-timing-func: cubic-bezier(0.4, 0, 0.2, 1);
   /* основний шрифт */
@@ -240,6 +240,10 @@ a:focus-visible {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.85;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
   padding: 10px 32px;
   cursor: pointer;
   border-width: 0px;
@@ -502,12 +506,18 @@ a:focus-visible {
 }
 
 .footer-inner-link {
-  margin-top: 12px;
+  margin-right: 93px;
+}
+
+.fotter-inner-text,
+.form-newsletter-label {
+  padding-top: 12px;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.17;
   color: var(--color-primary-dark);
 }
+
 .footer-inner-link > .social-links {
   margin-top: 20px;
   fill: currentColor;
@@ -524,6 +534,67 @@ a:focus-visible {
 .footer-inner-link .social-link-icon {
   fill: currentColor;
 }
+.form-news {
+  flex-grow: 1;
+}
+.form-newsletter {
+  display: flex;
+  flex-direction: column;
+}
+.form-newsletter-label {
+  margin-bottom: 20px;
+}
+.form-newsletter-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.form-newsletter-input:focus-within {
+  border-color: var(--color-nav-active);
+  color: var(--color-nav-active);
+}
+.form-newsletter-input:focus-within::placeholder {
+  color: var(--color-nav-active);
+}
+
+.form-newsletter-input::placeholder {
+  color: var(--color-footer-contacts);
+  transition-property: color;
+  transition-duration: var(--trans-duration);
+  transition-timing-function: var(--trans-timing-func);
+}
+.form-newsletter-input {
+  padding: 15px;
+  margin-right: 12px;
+  border: 1px solid;
+  border-color: rgba(255, 255, 255, 0.3);
+
+  background-color: var(--bgc-dark);
+  border-radius: 4px;
+  flex-grow: 1;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--color-footer-contacts);
+  outline: none;
+  transition-property: color, border-color;
+  transition-duration: var(--trans-duration);
+  transition-timing-function: var(--trans-timing-func);
+}
+.form-newsletter-button {
+  padding: 10px 29px;
+  flex-grow: 0;
+  margin-right: 0;
+}
+.form-newletter-text {
+  margin-right: 10px;
+}
+.form-newsletter-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
 /* portfolio */
 .gallery {
   padding-top: 94px;
@@ -663,23 +734,35 @@ a:focus-visible {
   visibility: visible;
   pointer-events: initial;
   opacity: 1;
-  }
+}
 .modal {
   position: absolute;
   left: 50%;
   top: 50%;
-
-  transform: translate(-50%, -50%);
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 
   width: 528px;
   height: 581px;
+  padding: 40px;
+
   border-radius: 4px;
   background-color: #ffffff;
-  transition-property:  transform(translate(-50%, -50%) scale(1)), opacity(1);
+
+  box-shadow: 0px 2px 1px 0px #00000033, 0px 1px 1px 0px #00000024,
+    0px 1px 3px 0px #0000001f;
+
+  transition-property: transform, opacity;
   transition-duration: var(--trans-duration);
   transition-timing-function: var(--trans-timing-func);
-  
-  
+}
+.contacts-callback-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  text-align: Center;
+  color: #212121;
 }
 .modal-button {
   position: absolute;
@@ -694,22 +777,22 @@ a:focus-visible {
   justify-content: center;
   cursor: pointer;
 }
+.modal-button:hover {
+  fill: var(--color-nav-active);
+}
 .modal-icon {
   width: 18px;
   height: 18px;
   fill: #000000;
 }
-.beckdrop.is-hidden > .modal{
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
+.beckdrop.is-hidden > .modal {
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
 }
 .beckdrop.is-hidden {
   visibility: hidden;
   transition: opacity (0);
-  
+
   transition-delay: var(--trans-duration);
   pointer-events: none;
 }
-
-
-  
