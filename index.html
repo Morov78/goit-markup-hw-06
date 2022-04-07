@@ -76,7 +76,7 @@
           <h1 class="hero-title">
             ЭФФЕКТИВНЫЕ РЕШЕНИЯ <br />ДЛЯ ВАШЕГО БИЗНЕСА
           </h1>
-          <button class="hero-button" type="button" data-modal-open>
+          <button class="button" type="button" data-modal-open>
             Заказать услугу
           </button>
         </div>
@@ -476,7 +476,7 @@
                 placeholder="E-mail"
                 class="form-newsletter-input"
               />
-              <button type="submit" class="form-newsletter-button hero-button">
+              <button type="submit" class="form-newsletter-button button">
                 <span class="form-newletter-text">Подписаться</span>
                 <svg class="form-newsletter-icon">
                   <use href="./images/icons.svg#icon-send"></use>
@@ -490,45 +490,76 @@
     <!-- модальне вікно -->
     <div class="beckdrop is-hidden" data-modal>
       <div class="modal">
-        <form name="form-contacts-callback">
-          <div role="group" arial-labelby="contacts-callback">
-            <p id="contacts-callback" class="contacts-callback-title">
-              Оставьте свои данные, мы вам перезвоним
-            </p>
-
+        <p class="modal-title">Оставьте свои данные, мы вам перезвоним</p>
+        <form name="form-contacts-callback" class="form-contacts-callback">
+          <div class="contacts-callback-wrap">
             <label for="name" class="contacts-callback-label">Имя</label>
-            <input
-              id="name"
-              type="text"
-              name="name"
-              class="contacts-callback-input"
-            />
+            <div class="contacts-callback-inner contacts-callback-box">
+              <svg class="contacts-callback-icon">
+                <use href="./images/icons.svg#icon-person"></use>
+              </svg>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                class="contacts-callback-input"
+              />
+            </div>
 
             <label for="phone" class="contacts-callback-label">Телефон</label>
-            <input
-              id="phone"
-              type="tel"
-              name="phone"
-              class="contacts-callback-input"
-            />
+            <div class="contacts-callback-inner contacts-callback-box">
+              <svg class="contacts-callback-icon">
+                <use href="./images/icons.svg#icon-phone-modal"></use>
+              </svg>
+              <input
+                id="phone"
+                type="tel"
+                name="phone"
+                class="contacts-callback-input"
+              />
+            </div>
 
             <label for="email" class="contacts-callback-label">Почта</label>
-            <input
-              id="email"
-              type="email"
-              name="email"
-              class="contacts-callback-input"
-            />
+            <div class="contacts-callback-inner contacts-callback-box">
+              <svg class="contacts-callback-icon">
+                <use href="./images/icons.svg#icon-email-modal"></use>
+              </svg>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                class="contacts-callback-input"
+              />
+            </div>
+
             <label for="comment" class="contacts-callback-label"
               >Комментарий</label
             >
             <textarea
               id="comment"
-              type=""
               name="comment"
-              class="contacts-callback-input"
-            />
+              placeholder="Введите текст"
+              class="contacts-callback-textarea contacts-callback-box"
+            ></textarea>
+
+            <div class="contacts-callback-check">
+              <input
+                id="check-contacts"
+                type="checkbox"
+                name="check-contacts"
+                value="enabled"
+                class="contacts-callback-checkbox visually-hidden"
+              />
+
+              <label for="check-contacts">
+                <span class="check-contacts-label"
+                  >Соглашаюсь с рассылкой и принимаю</span
+                >
+                <a class="check-contacts-link link" href="">Условия договора</a>
+              </label>
+            </div>
           </div>
+          <button class="button submit-button" type="submit">Отправить</button>
         </form>
         <button class="modal-button" type="button" data-modal-close>
           <svg class="modal-icon">
