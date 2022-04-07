@@ -85,7 +85,7 @@
       <!--Наши преимущества Features-->
       <section class="features">
         <div class="container">
-          <h2 class="invisible-txt">Features</h2>
+          <h2 class="visually-hidden">Features</h2>
           <ul class="features-list">
             <li class="features-item">
               <div class="features-wrap">
@@ -490,6 +490,11 @@
     <!-- модальне вікно -->
     <div class="beckdrop is-hidden" data-modal>
       <div class="modal">
+        <button class="modal-button" type="button" data-modal-close>
+          <svg class="modal-icon">
+            <use href="./images/icons.svg#icon-close-18"></use>
+          </svg>
+        </button>
         <p class="modal-title">Оставьте свои данные, мы вам перезвоним</p>
         <form name="form-contacts-callback" class="form-contacts-callback">
           <div class="contacts-callback-wrap">
@@ -561,11 +566,6 @@
           </div>
           <button class="button submit-button" type="submit">Отправить</button>
         </form>
-        <button class="modal-button" type="button" data-modal-close>
-          <svg class="modal-icon">
-            <use href="./images/icons.svg#icon-close-18"></use>
-          </svg>
-        </button>
       </div>
     </div>
     <script src="./js/modal.js"></script>

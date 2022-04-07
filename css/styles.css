@@ -824,7 +824,10 @@ a:focus-visible {
 
   color: rgba(117, 117, 117, 0.5);
 }
-
+.contacts-callback-check {
+  margin-left: auto;
+  margin-right: auto;
+}
 .contacts-callback-input {
   flex-grow: 1;
   border: none;
@@ -873,7 +876,8 @@ a:focus-visible {
 
 .check-contacts-label {
   font-size: 14px;
-  line-height: 1.46;
+  line-height: 1.71;
+  margin-right: 4px;
   color: var(--color-primary-light);
 }
 .check-contacts-link {
@@ -906,14 +910,16 @@ a:focus-visible {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: #000000;
 }
-.modal-button:hover {
-  fill: var(--color-nav-active);
+.modal-button:hover,
+.modal-button:focus {
+  color: var(--color-nav-active);
 }
 .modal-icon {
   width: 18px;
   height: 18px;
-  fill: #000000;
+  fill: currentColor;
 }
 .beckdrop.is-hidden > .modal {
   transform: translate(-50%, -50%) scale(0);
